@@ -1,0 +1,48 @@
+<?php
+/**
+ * MageINIC
+ * Copyright (C) 2023 MageINIC <support@mageinic.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see https://opensource.org/licenses/gpl-3.0.html.
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category MageINIC
+ * @package MageINIC_RatingFilter
+ * @copyright Copyright (c) 2023 MageINIC (https://www.mageinic.com/)
+ * @license https://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author MageINIC <support@mageinic.com>
+ */
+
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+?>
+<?php if ($block->getFilterval() == $block->getStar()): ?>
+<span style='background-color:#e8e8e8;'>
+    <?php endif; ?>
+    <div class="rating-summary" style="display: inline-block;margin-top: -5px;">
+        <div class="rating-result" title="<?= $escaper->escapeHtmlAttr($block->getStar() * 20); ?>%">
+            <span style="width:<?= $escaper->escapeHtmlAttr($block->getStar() * 20); ?>%"><span>
+                    <?= $escaper->escapeHtml($block->getStar()); ?>
+                </span>
+            </span>
+        </div>
+    </div>
+<?php if ($block->getStar() != 5): ?>
+    <span style="font-size: smaller;">&amp; <?= $escaper->escapeHtml(__('up')); ?></span>
+<?php endif; ?>
+    <?php if ($block->getFilterval() == $block->getStar()): ?>
+</span>
+<?php endif; ?>
