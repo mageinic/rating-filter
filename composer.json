@@ -1,6 +1,6 @@
 {
     "name": "mageinic/ratingfilter",
-    "description": "Rating Filter Extension by MageINIC team",
+    "description": "Rating Filter Extension by MageINIC, Filter Product By Rating extension works on the concept of filtering products based on ratings. Rating filters can appear horizontally or vertically. Filter Product by Rating takes responsibility for sorting the products by the rating which makes the user navigate and filter the products as per the ratings which are given to each product(s).",
     "require": {
         "php": "^8.0",
         "mageinic/core": "1.0.*"
@@ -8,7 +8,8 @@
     "type": "magento2-module",
     "version": "1.0.0",
     "license": [
-        "Commercial"
+        "OSL-3.0",
+        "AFL-3.0"
     ],
     "authors": [
         {
